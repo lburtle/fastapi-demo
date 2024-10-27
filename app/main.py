@@ -15,14 +15,15 @@ def zone_apex():
 @app.get("/add/{a}/{b}")
 def add(a: int, b: int):
     return {"sum": a + b}
-<<<<<<< HEAD
 
 @app.get("/square/{a}")
 def square(a: int):
     return {"product": a * a}
-=======
->>>>>>> 661468dda0051934e6ad7be7bd4eeb40d3c08169
 
 @app.get("/multiply/{a}/{b}")
 def multiply(a: int, b: int):
     return {"product": a * b}
+
+@app.get("/subtract/{a}/{b}")
+def subtract(a: int, b: int):
+    return {"sum": a - b}
