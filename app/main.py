@@ -8,8 +8,8 @@ import os
 import mysql.connector
 from mysql.connector import Error
 
-DBHOST = "xfd3tf-dp1-spotify.s3-website-us-east-1.amazonaws.com "
-DBUSER = "admin"
+DBHOST = os.getenv('DBHOST')
+DBUSER = os.getenv('DBUSER')
 DBPASS = os.getenv('DBPASS')
 DB = "xfd3tf_dp1"
 
@@ -27,6 +27,8 @@ app.add_middleware(
 
 @app.get('/genres')
 def get_genres():
+    db = mysql.connector.connect(user=DBUSER, host=DBHOST, password=DBPASS, database=DB)
+    cur=db.cursor()
     query = "SELECT * FROM genres ORDER BY genreid;"
     try:    
         cur.execute(query)
@@ -40,7 +42,9 @@ def get_genres():
         return {"Error": "MySQL Error: " + str(e)}
 
 @app.get('/songs')
-def get_genres():
+def get_songs():
+    db = mysql.connector.connect(user=DBUSER, host=DBHOST, password=DBPASS, database=DB)
+    cur=db.cursor()
     query = "SELECT * FROM songs ORDER BY id;"
     try:    
         cur.execute(query)
