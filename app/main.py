@@ -8,7 +8,7 @@ import os
 import mysql.connector
 from mysql.connector import Error
 
-DBHOST = "ds2022.cqee4iwdcaph.us-east-1.rds.amazonaws.com"
+DBHOST = "xfd3tf-dp1-spotify.s3-website-us-east-1.amazonaws.com "
 DBUSER = "admin"
 DBPASS = os.getenv('DBPASS')
 DB = "xfd3tf_dp1"
