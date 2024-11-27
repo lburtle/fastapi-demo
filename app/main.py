@@ -8,8 +8,8 @@ import os
 import mysql.connector
 from mysql.connector import Error
 
-DBHOST = os.getenv('DBHOST')
-DBUSER = os.getenv('DBUSER')
+DBHOST = "ds2022.cqee4iwdcaph.us-east-1.rds.amazonaws.com"
+DBUSER = "admin"
 DBPASS = os.getenv('DBPASS')
 DB = "xfd3tf_dp1"
 
